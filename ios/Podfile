@@ -1,0 +1,20 @@
+platform :ios, '11.0'
+
+# CocoaPods analytics sends minimal, anonymous usage data in order to analyze
+# required feedback. To disable it, uncomment the line below:
+# COCOAPODS_DISABLE_STATS=1
+
+use_frameworks!
+use_modular_headers!
+
+flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+target 'Runner' do
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
